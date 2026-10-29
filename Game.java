@@ -56,12 +56,13 @@ public class Game {
 	
 
 	public static void main(String[] args) {
-		Player p1 = new Player("Darko", 0, 0, 10, 10, 100);
+		Player p1 = new Player("Darko", 12, 5, 10, 10, 100);
 		addEnemy(new Enemy("Goblin", 10, 5, 16, 16, 15, 50));
         addEnemy(new Enemy("Orc", 20, 8, 20, 20, 25, 70));
         addEnemy(new BossEnemy("Goblin King", 12, 3, 32, 32, 25, 120));
-        
-        
+        Game game = new Game(p1);
+        printEventLog();
+        System.out.println("Kolizija: " + checkCollision(game.getPlayer(), enemies));
 	}
 
 
